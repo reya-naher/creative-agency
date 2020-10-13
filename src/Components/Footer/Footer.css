@@ -1,0 +1,11 @@
+.footer{
+background-color: #FBD062;
+}
+.input-footer{
+  width: 80%;
+}
+.email::placeholder {
+  font-weight: 500;
+  width: 80%;
+  color: black;
+}

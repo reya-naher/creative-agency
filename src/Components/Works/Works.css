@@ -1,0 +1,10 @@
+.works{
+  background-color: #111430;
+}
+.slick-dots{
+  position: static !important;
+}
+.slick-dots li button::before{
+  color: #FBD062 !important;
+  font-size: 20px;
+}

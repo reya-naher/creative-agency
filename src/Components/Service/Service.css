@@ -1,0 +1,9 @@
+ .card-img-top {
+  width:50% !important;
+}
+.service{
+  border:none!important;
+}
+.service:hover{
+  box-shadow:  20px 20px 40px  #cac9c9;
+}
