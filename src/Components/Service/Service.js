@@ -1,15 +1,18 @@
 import React from 'react';
 import './Service.css'
 import { Card, Col } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
 
 const Service = ({ item }) => {
-  const handleClick = () => {
-    console.log("clicked")
+
+  const history = useHistory()
+  const handleService = (work) => {
+    history.push(`/customer/${work}`);
   }
   return (
-        <Col onClick={handleClick} md="4">
+        <Col onClick={()=>handleService(item.name)} md="4">
         <Card className="service text-center" style={{ width: '18rem' }}>
-  <Card.Img className="mx-auto m-2"  variant="top"  src={item.logo} />
+  <Card.Img className="mx-auto m-2"  variant="top"  src={`data:image/png;base64,${item.image.img}`} />
   <Card.Body>
           <Card.Title>{item.name}</Card.Title>
     <Card.Text>{item.description}

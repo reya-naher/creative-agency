@@ -6,20 +6,20 @@ const FeedbackClient = ({ item }) => {
     <Col md="4">
       <Card className="p-4">
         <Media>
-          <img
+          {/* <img
             width={64}
             height={64}
             className="mr-3"
             src={item.image}
             alt="client"
-          />
+          /> */}
           <Media.Body>
             <h5>{item.name}</h5>
             <h6>{item.designation}</h6>
           </Media.Body>
         </Media>
         <Card.Text>
-          {item.description}
+          {item.reviews}
         </Card.Text>
       </Card>
     </Col>

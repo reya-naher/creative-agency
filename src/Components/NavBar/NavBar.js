@@ -1,5 +1,6 @@
 import React from 'react';
 import { Nav,Navbar,Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 const NavBar = () => {
   return (
     <>
@@ -20,7 +21,11 @@ const NavBar = () => {
             <Nav.Link className="mr-5" href="#link">Our Portfolio</Nav.Link>
             <Nav.Link className="mr-5" href="#home">Our Team</Nav.Link>
             <Nav.Link className="mr-5 " href="#link">Contact Us</Nav.Link>
-            <Button variant="dark">Login</Button>
+            <Link to="/login">
+              <Button variant="dark">
+                Login
+                </Button>
+            </Link>
       </Nav>
   </Navbar.Collapse>
 </Navbar>

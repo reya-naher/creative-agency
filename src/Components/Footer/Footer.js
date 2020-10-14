@@ -13,7 +13,7 @@ const Footer = () => {
           </Col>
           <Col md="6">
             <form>
-              <input type="text" name="email" className="input-footer email m-2 p-2" id="email" placeholder="Your Email Address"/>
+              <input type="email" name="email" className="input-footer email m-2 p-2" id="email" placeholder="Your Email Address"/>
               <br />
               <input type="text" name="email" className="input-footer m-2 p-2" id="name" placeholder="Your Name/Company's name"/>
               <br />

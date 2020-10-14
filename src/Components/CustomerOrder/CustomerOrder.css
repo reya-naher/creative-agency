@@ -1,0 +1,19 @@
+.imgAdmin{
+  margin-bottom: 30px;
+}
+.order-input{
+  width: 60%;
+}
+.order-input-price{
+  width:30%;
+}
+.order-fil-upload{
+display:none;
+}
+.style-file-btn{
+  width:30%;
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
