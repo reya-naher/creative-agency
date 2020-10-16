@@ -6,7 +6,6 @@ import LogoGroup from '../../Components/LogoGroup/LogoGroup';
 import Services from '../../Components/Services/Services';
 import Works from '../../Components/Works/Works';
 
-
 const Home = () => {
   return (
     <>

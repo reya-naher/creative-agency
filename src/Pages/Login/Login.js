@@ -4,7 +4,7 @@ import * as firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from '../../Components/FirebaseConfig/FirebaseConfig';
 import { UserContext } from '../../App'
-import { useHistory, useLocation,Link } from 'react-router-dom';
+import { useHistory, useLocation, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 
@@ -22,42 +22,52 @@ const Login = () => {
     const provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider)
       .then(res => {
-        const { displayName, email } = res.user;
+        const { displayName, email, photoURL } = res.user;
         const signedInUser = {
           name: displayName,
-          email: email
+          email: email,
+          photo: photoURL
         }
         setLoggedInUser(signedInUser);
-        // setUserToken();
+        setUserToken();
         history.replace(from);
       }).catch(error => {
         console.log(error)
       });
   }
 
-  // const setUserToken = () => {
-  //   firebase.auth().currentUser.getIdToken(/* forceRefresh */ true).then(function(idToken) {
-  //     sessionStorage.setItem('token',idToken)
-  //   }).catch(function(error) {
-  //     // Handle error
-  //   });
-  // }
+  const setUserToken = () => {
+    firebase.auth().currentUser.getIdToken(true).then(function (idToken) {
+      sessionStorage.setItem('token', idToken)
+    }).catch(function (error) {
+      console.log(error)
+    });
+  }
 
   return (
-    <div className="container">
+    <div className="container login-div">
       <div className="imgDiv">
         <Link to="/">
-          <img src="https://i.imgur.com/C2lhwy9.png" height="50" width="150" alt="" />
-          </Link>
+          <img
+            src="https://i.imgur.com/C2lhwy9.png"
+            height="50"
+            width="150"
+            alt="" />
+        </Link>
       </div>
       <div className="loginDiv p-5">
-        <h2 className="mt-5"><b>Login With</b></h2>
+        <h2
+          className="mt-5">
+          <b>Login With</b>
+        </h2>
         <button
           className="googleSign"
           onClick={googleSignIn}>
-          <FontAwesomeIcon className="mr-5" icon={faGoogle} /> 
+          <FontAwesomeIcon
+            className="g-icon"
+            icon={faGoogle} />
              Continue with Google
-             </button>
+        </button>
       </div>
     </div>
   );

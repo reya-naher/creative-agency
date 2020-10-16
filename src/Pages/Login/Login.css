@@ -1,4 +1,4 @@
-.container{
+.login-div{
   text-align:center;
 }
 .imgDiv{
@@ -21,3 +21,17 @@
   border-radius: 25px;
   width:100%;
 }
+.g-icon{
+  margin-right: 20px;
+}
+@media (max-width: 640px)  { 
+  .loginDiv{
+    width: 300px;
+  }
+  .googleSign{
+    width: 80%;
+  }
+  .g-icon{
+    margin-right: 5px!important;
+  }
+ }

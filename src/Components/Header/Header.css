@@ -3,3 +3,11 @@
   background-color: #FBD062;
   clip-path: polygon(0 1%, 100% 1%, 100% 85%, 0 100%);
 }
+@media (max-width: 640px)  { 
+  .header{
+    height: 900px;
+    display:block;
+  }
+ }
+
+

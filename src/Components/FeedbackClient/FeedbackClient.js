@@ -1,24 +1,26 @@
 import React from 'react';
+import './FeedbackClient.css';
 import { Card, Col, Media } from 'react-bootstrap';
 
 const FeedbackClient = ({ item }) => {
+
   return (
-    <Col md="4">
-      <Card className="p-4">
+    <Col md="4" sm={6} xs={12}>
+      <Card className="feedback-card p-4">
         <Media>
-          {/* <img
+          <img
             width={64}
             height={64}
             className="mr-3"
-            src={item.image}
+            src="https://i.imgur.com/4GJFDHA.png"
             alt="client"
-          /> */}
+          />
           <Media.Body>
-            <h5>{item.name}</h5>
-            <h6>{item.designation}</h6>
+            <h5><b>{item.name}</b></h5>
+            <h6><b>{item.designation}</b></h6>
           </Media.Body>
         </Media>
-        <Card.Text>
+        <Card.Text className="text-secondary">
           {item.reviews}
         </Card.Text>
       </Card>

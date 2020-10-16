@@ -17,19 +17,18 @@ const Dashboard = () => {
     fetch('http://localhost:5000/isAdmin', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
-      body:JSON.stringify({email:loggedInUser.email})
+      body: JSON.stringify({ email: loggedInUser.email })
     })
       .then(res => res.json())
-    .then(data => setIsAdmin(data))
-  },[])
-  
+      .then(data => setIsAdmin(data))
+  }, [])
+
   return (
     <>
-     
-      {isAdmin ? <Admin></Admin> : <CustomerOrder work={work}></CustomerOrder>
+      {
+        isAdmin ? <Admin></Admin> : <CustomerOrder work={work}></CustomerOrder>
       }
-      
-      </>
+    </>
 
   );
 };

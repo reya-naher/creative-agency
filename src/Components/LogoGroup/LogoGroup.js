@@ -2,10 +2,14 @@ import React from 'react';
 import './LogoGroup.css';
 import { ListGroup } from 'react-bootstrap';
 
-
 const LogoGroup = () => {
+  
   return (
-<ListGroup horizontal className= "d-flex justify-content-center m-5">
+    ['sm'].map((breakpoint, idx) => (
+      <ListGroup
+        horizontal={breakpoint}
+        key={idx}
+        className="d-flex justify-content-center  m-5 my-2">
       <ListGroup.Item>
         <img
           height="30"
@@ -41,7 +45,8 @@ const LogoGroup = () => {
           src="https://i.imgur.com/YYWVool.png"
           alt="" />
       </ListGroup.Item>
-</ListGroup>
+      </ListGroup>
+    ))
   );
 };
 

@@ -12,8 +12,12 @@ display:none;
 }
 .style-file-btn{
   width:30%;
-  border: 1px solid #ccc;
-  display: inline-block;
+  border: 1px solid #009444;
+  display: inline;
   padding: 6px 12px;
   cursor: pointer;
+  background-color: #DEFFED;
+}
+.error{
+  color:red;
 }

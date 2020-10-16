@@ -15,6 +15,10 @@ import CustomerOrder from './Components/CustomerOrder/CustomerOrder';
 import AdminAddService from './Components/AdminAddService/AdminAddService';
 import AdminServiceList from './Components/AdminServiceList/AdminServiceList';
 import AdminMake from './Components/AdminMake/AdminMake';
+import Admin from './Components/Admin/Admin';
+import NoMatch from './Components/NoMatch/NoMatch';
+import Works from './Components/Works/Works';
+import Footer from './Components/Footer/Footer';
 
 export const UserContext = createContext()
 
@@ -27,14 +31,14 @@ function App() {
       <Switch>
         <Route exact path="/">
         <Home></Home>
-        </Route>
+          </Route>
         <Route path='/login'>
           <Login></Login>
           </Route>
           <Route path='/order'>
           <CustomerOrder></CustomerOrder>
           </Route>
-          <Route path='/customerservicelist'>
+          <Route path='/customerServiceList'>
           <CustomerServiceList></CustomerServiceList>
           </Route>
           <Route path='/review'>
@@ -43,14 +47,17 @@ function App() {
           <PrivateRoute path="/customer/:work">
              <Dashboard></Dashboard>
           </PrivateRoute>
-          <Route path='/adminallservice'>
-          <AdminServiceList></AdminServiceList>
+          <Route path='/admin'>
+          <Admin></Admin>
           </Route>
-          <Route path='/addservice'>
+          <Route path='/addService'>
           <AdminAddService></AdminAddService>
           </Route>
-          <Route path='/makeadmin'>
+          <Route path='/makeAdmin'>
           <AdminMake></AdminMake>
+          </Route>
+          <Route path='*'>
+          <NoMatch></NoMatch>
           </Route>
       </Switch>
       </Router>

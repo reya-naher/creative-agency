@@ -1,3 +1,6 @@
 .review-input{
   width: 60%;
 }
+.error{
+  color:red;
+}

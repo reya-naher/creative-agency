@@ -1,0 +1,15 @@
+.sidebar-btn{
+  margin-top: 10px;
+}
+.sidebar-btn:active,.sidebar-btn:focus,.sidebar-btn:hover{
+color:green !important; 
+}
+.icon-style{
+  margin-right: 10px;
+}
+
+@media (max-width: 640px) {
+  .sidebar-div{
+    padding-bottom: 30px;
+  }
+}
