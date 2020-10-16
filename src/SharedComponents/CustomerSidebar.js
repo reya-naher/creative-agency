@@ -3,7 +3,7 @@ import './Sidebar.css';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCommentDots, faPlus, faShoppingBag, faShoppingCart, faUserPlus } from '@fortawesome/free-solid-svg-icons';
+import { faCommentDots, faShoppingBag, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 const CustomerSidebar = () => {
 
   return (

@@ -13,12 +13,9 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 import CustomerReview from './Components/CustomerReview/CustomerReview';
 import CustomerOrder from './Components/CustomerOrder/CustomerOrder';
 import AdminAddService from './Components/AdminAddService/AdminAddService';
-import AdminServiceList from './Components/AdminServiceList/AdminServiceList';
 import AdminMake from './Components/AdminMake/AdminMake';
 import Admin from './Components/Admin/Admin';
 import NoMatch from './Components/NoMatch/NoMatch';
-import Works from './Components/Works/Works';
-import Footer from './Components/Footer/Footer';
 
 export const UserContext = createContext()
 

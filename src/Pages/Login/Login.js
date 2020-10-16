@@ -29,7 +29,7 @@ const Login = () => {
           photo: photoURL
         }
         setLoggedInUser(signedInUser);
-        setUserToken();
+        // setUserToken();
         history.replace(from);
       }).catch(error => {
         console.log(error)

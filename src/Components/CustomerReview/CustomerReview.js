@@ -1,26 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './CustomerReview.css';
 import { Button, Container, Row, Col } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import CustomerSidebar from '../../SharedComponents/CustomerSidebar';
+import { UserContext } from '../../App';
 
 const CustomerReview = () => {
+  const [loggedInUser, setLoggedInUser] = useContext(UserContext)
   const { register, handleSubmit, errors } = useForm();
 
-  const handleBlur = (inputText) => {
-    const letters = /^[A-Za-z]+$/;
-    if (inputText.value.match(letters)) {
-      return true;
-    }
-    else {
-      alert('Please input alphabet characters only');
-      return false;
-    }
-  }
 
-  const onSubmit = data => {
+  const onSubmit = (data,e) => {
+    e.target.reset();
     const customerReviews = data
-    fetch('http://localhost:5000/addReviews', {
+    fetch('https://sheltered-inlet-71328.herokuapp.com/addReviews', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -44,7 +37,12 @@ const CustomerReview = () => {
           <Col
             className="pb-5" style={{ backgroundColor: "#F4F7FC" }}
             md={9}>
-            <h3 className="mt-4 mb-5">Review</h3>
+                  <h3 className="mt-4">
+              Review
+        </h3>
+        <h5 style={{ textAlign: 'right' }}>
+              {loggedInUser.name}
+            </h5>
             <form
               className="form2"
               onSubmit={handleSubmit(onSubmit)}>
@@ -52,7 +50,6 @@ const CustomerReview = () => {
                 type="text"
                 name="name"
                 className="review-input m-2 p-2"
-                onBlur={() => handleBlur(document.form2.name)}
                 ref={register({ required: true })}
                 placeholder="Your Name"
               />

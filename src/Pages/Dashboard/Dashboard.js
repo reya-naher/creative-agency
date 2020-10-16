@@ -14,7 +14,7 @@ const Dashboard = () => {
   const { work } = useParams();
 
   useEffect(() => {
-    fetch('http://localhost:5000/isAdmin', {
+    fetch('https://sheltered-inlet-71328.herokuapp.com/isAdmin', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({ email: loggedInUser.email })
@@ -26,7 +26,11 @@ const Dashboard = () => {
   return (
     <>
       {
-        isAdmin ? <Admin></Admin> : <CustomerOrder work={work}></CustomerOrder>
+        isAdmin && loggedInUser.email && <Admin></Admin> 
+      }
+        
+      {
+       !isAdmin && loggedInUser.email && <CustomerOrder work={work}></CustomerOrder>
       }
     </>
 

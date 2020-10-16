@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { Button, Container, Row, Col } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import { UserContext } from '../../App';
@@ -7,9 +7,11 @@ import AdminSidebar from '../../SharedComponents/AdminSidebar';
 const AdminMake = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext)
   const { register, handleSubmit, errors } = useForm();
-  const onSubmit = data => {
+
+  const onSubmit = (data,e) => {
+    e.target.reset();
     const addAdminData = data
-    fetch('http://localhost:5000/addAdmins', {
+    fetch('https://sheltered-inlet-71328.herokuapp.com/addAdmins', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

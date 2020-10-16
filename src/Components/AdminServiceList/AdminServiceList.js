@@ -7,7 +7,7 @@ const AdminServiceList = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext)
   const [customer, setCustomer] = useState([])
   useEffect(() => {
-    fetch('http://localhost:5000/servicesList')
+    fetch('https://sheltered-inlet-71328.herokuapp.com/servicesList')
       .then(res => res.json())
       .then(data => setCustomer(data))
   }, [])

@@ -27,7 +27,7 @@ const AdminAddService = () => {
     formData.append('name', info.name)
     formData.append('description', info.description)
 
-    fetch('http://localhost:5000/adminAddService', {
+    fetch('https://sheltered-inlet-71328.herokuapp.com/adminAddService', {
       method: 'POST',
       body: formData
     })

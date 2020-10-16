@@ -3,7 +3,8 @@ import './Sidebar.css';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus, faShoppingBag, faUserPlus } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faShoppingBag, faSignOutAlt, faUserPlus } from '@fortawesome/free-solid-svg-icons';
+
 
 const AdminSidebar = () => {
   return (

@@ -22,9 +22,10 @@ const CustomerOrder = ({ work }) => {
     }
   }
 
-  const onSubmit = data => {
+  const onSubmit = (data,e) => {
+    e.target.reset();
     const customerServices = data
-    fetch('http://localhost:5000/addServices', {
+    fetch('https://sheltered-inlet-71328.herokuapp.com/addServices', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -46,14 +47,12 @@ const CustomerOrder = ({ work }) => {
           <CustomerSidebar></CustomerSidebar>
         </Col>
         <Col className="pb-5" style={{ backgroundColor: "#F4F7FC" }} md={9}>
-          <h3 className="mt-4 mb-5">
-            Order
-          <span style={{
-              textAlign: 'right'
-            }}>
-              {loggedInUser.name}
-            </span>
-          </h3>
+        <h3 className="mt-4">
+        Order
+        </h3>
+      <h5 style={{ textAlign: 'right' }}>
+        {loggedInUser.name}
+      </h5>
           <form name="form1" onSubmit={handleSubmit(onSubmit)}>
             <input
               type="text"
