@@ -16,7 +16,7 @@ const Works = () => {
   return (
     <div className="works m-5">
       <h1 className="text-white text-center p-5">
-        Here are some of
+        Here are some of 
         <span
           style={{ color: "#7AB259" }}>
           our works

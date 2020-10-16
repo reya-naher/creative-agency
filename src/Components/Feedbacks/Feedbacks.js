@@ -14,8 +14,8 @@ const Feedbacks = () => {
     <Container>
       <h1
         className="text-center m-5">
-        Clients
-        <span style={{ color: "#7AB259" }}>Feedback</span>
+        Clients 
+        <span style={{ color: "#7AB259" }}> Feedback</span>
       </h1>
       <Row className="d-flex justify-content-center">
         {
