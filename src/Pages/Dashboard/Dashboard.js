@@ -9,7 +9,7 @@ import { useEffect } from 'react';
 
 
 const Dashboard = () => {
-  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+  const {loggedInUser} = useContext(UserContext);
   const [isAdmin, setIsAdmin] = useState(false);
   const { work } = useParams();
 

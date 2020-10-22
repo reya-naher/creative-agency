@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUpload } from '@fortawesome/free-solid-svg-icons';
 
 const AdminAddService = () => {
-  const [loggedInUser, setLoggedInUser] = useContext(UserContext)
+  const {loggedInUser} = useContext(UserContext)
   const [info, setInfo] = useState({})
   const [file, setFile] = useState(null);
 

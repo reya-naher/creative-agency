@@ -5,7 +5,7 @@ import { UserContext } from '../../App';
 import AdminSidebar from '../../SharedComponents/AdminSidebar';
 
 const AdminMake = () => {
-  const [loggedInUser, setLoggedInUser] = useContext(UserContext)
+  const {loggedInUser, setLoggedInUser} = useContext(UserContext)
   const { register, handleSubmit, errors } = useForm();
 
   const onSubmit = (data,e) => {

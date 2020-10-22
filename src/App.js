@@ -21,9 +21,10 @@ export const UserContext = createContext()
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({})
+  const [update, setUpdate] = useState('pending')
 
   return (
-    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+    <UserContext.Provider value={{ loggedInUser, setLoggedInUser,update,setUpdate }}>
     <Router>
       <Switch>
         <Route exact path="/">

@@ -8,13 +8,14 @@ import CustomerService from '../CustomerService/CustomerService';
 
 const CustomerServiceList = () => {
   const [order, setOrders] = useState([])
-  const [loggedInUser, setLoggedInUser] = useContext(UserContext)
+  const {loggedInUser} = useContext(UserContext)
 
   useEffect(() => {
     fetch('https://sheltered-inlet-71328.herokuapp.com/services?email=' + loggedInUser.email)
       .then(res => res.json())
       .then(data => setOrders(data))
   }, [])
+
 
   return (
     <>

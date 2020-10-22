@@ -6,7 +6,7 @@ import CustomerSidebar from '../../SharedComponents/CustomerSidebar';
 import { UserContext } from '../../App';
 
 const CustomerReview = () => {
-  const [loggedInUser, setLoggedInUser] = useContext(UserContext)
+  const {loggedInUser, setLoggedInUser} = useContext(UserContext)
   const { register, handleSubmit, errors } = useForm();
 
 

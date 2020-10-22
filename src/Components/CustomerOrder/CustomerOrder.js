@@ -9,7 +9,7 @@ import { faUpload } from '@fortawesome/free-solid-svg-icons';
 
 const CustomerOrder = ({ work }) => {
   const { register, handleSubmit, errors } = useForm();
-  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+  const {loggedInUser,update} = useContext(UserContext);
 
   const handleBlur = (inputText) => {
     const letters = /^[A-Za-z]+$/;
@@ -25,6 +25,7 @@ const CustomerOrder = ({ work }) => {
   const onSubmit = (data,e) => {
     e.target.reset();
     const customerServices = data
+
     fetch('https://sheltered-inlet-71328.herokuapp.com/addServices', {
       method: 'POST',
       headers: {
@@ -117,6 +118,14 @@ const CustomerOrder = ({ work }) => {
               type="file"
               name="project file"
               id="file upload" />
+            <br />
+            <input
+              name="status"
+              type="hidden"
+              className="order-input m-2 p-2"
+              defaultValue={update}
+              ref={register({ required: true })}
+              />
             <br />
             <Button
               className="pr-5 pl-5 m-2"

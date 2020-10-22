@@ -3,8 +3,9 @@ import './AdminServiceList.css';
 import { UserContext } from '../../App'
 import { Table } from 'react-bootstrap';
 
+
 const AdminServiceList = () => {
-  const [loggedInUser, setLoggedInUser] = useContext(UserContext)
+  const { loggedInUser,setUpdate } = useContext(UserContext)
   const [customer, setCustomer] = useState([])
   useEffect(() => {
     fetch('https://sheltered-inlet-71328.herokuapp.com/servicesList')
@@ -12,8 +13,24 @@ const AdminServiceList = () => {
       .then(data => setCustomer(data))
   }, [])
 
-  const handleChange = (e) => {
-    // console.log(e.target.value)
+
+  const handleChange = (e,id) => {
+    const status = e.value;
+            fetch(`https://sheltered-inlet-71328.herokuapp.com/update/${id}`, {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(status)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data) {
+                  alert('Status updated successfully')
+                  setUpdate(data)
+                }
+            })
+              .catch(error => {
+                console.log(error)
+    })
   }
 
   return (
@@ -21,6 +38,7 @@ const AdminServiceList = () => {
       <h3 className="mt-4">
         Services List
         </h3>
+      
       <h5 style={{ textAlign: 'right' }}>
         {loggedInUser.name}
       </h5>
@@ -31,7 +49,7 @@ const AdminServiceList = () => {
             <th>Email</th>
             <th>Services</th>
             <th>Project Details</th>
-            <th>Status</th>
+            {/* <th>Status</th> */}
           </tr>
         </thead>
         <tbody>
@@ -42,10 +60,10 @@ const AdminServiceList = () => {
                 <td>{item.email}</td>
                 <td>{item.work}</td>
                 <td>{item.details}</td>
-                <td>
-                  <select name="status"
+                {/* <td>
+                    <select name="status"
                     id="status"
-                    onChange={handleChange}>
+                    onChange={(e) => { handleChange(e, `${item._id}`) }}>
                     <option
                       className="text-danger"
                       value="pending">
@@ -62,7 +80,7 @@ const AdminServiceList = () => {
                       On going
                       </option>
                   </select>
-                </td>
+                </td> */}
               </tr>
             )}
         </tbody>
