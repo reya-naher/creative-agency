@@ -13,10 +13,7 @@ const Services = () => {
     <Container>
       <h1
         className="text-center m-5">
-        Provide Awesome 
-        <span style={{ color: "#7AB259" }}>
-           Services
-          </span>
+        Provide Awesome  <span style={{ color: "#7AB259" }}> Services </span>
       </h1>
       <Row className="d-flex justify-content-center">
         {

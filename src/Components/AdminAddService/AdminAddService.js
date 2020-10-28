@@ -84,6 +84,7 @@ const AdminAddService = () => {
                   icon={faUpload} />
               Upload Icon
               </label>
+              < br/>
               <input
                 onChange={handleFileChange} className="order-fil-upload m-2 p-2"
                 type="file"

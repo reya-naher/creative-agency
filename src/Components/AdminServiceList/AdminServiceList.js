@@ -19,13 +19,13 @@ const AdminServiceList = () => {
             fetch(`https://sheltered-inlet-71328.herokuapp.com/update/${id}`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(status)
+            body: JSON.stringify({status})
         })
             .then(res => res.json())
             .then(data => {
                 if (data) {
                   alert('Status updated successfully')
-                  setUpdate(data)
+                   setUpdate(data)
                 }
             })
               .catch(error => {
@@ -60,7 +60,7 @@ const AdminServiceList = () => {
                 <td>{item.email}</td>
                 <td>{item.work}</td>
                 <td>{item.details}</td>
-                {/* <td>
+               {/* <td>
                     <select name="status"
                     id="status"
                     onChange={(e) => { handleChange(e, `${item._id}`) }}>
@@ -79,7 +79,7 @@ const AdminServiceList = () => {
                       value="on going">
                       On going
                       </option>
-                  </select>
+                  </select> 
                 </td> */}
               </tr>
             )}

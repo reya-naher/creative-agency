@@ -105,27 +105,27 @@ const CustomerOrder = ({ work }) => {
               placeholder="Price" />
             {errors.price && <p className="error">
               Price is required</p>}
-            <label
+            {/* <label
               htmlFor="file upload"
               className="style-file-btn">
               <FontAwesomeIcon
                 className="icon-style"
                 icon={faUpload} />
               Upload Project File
-              </label>
-            <input
+              </label> */}
+            {/* <input
               className="order-fil-upload m-2 p-2"
               type="file"
               name="project file"
-              id="file upload" />
+              id="file upload" /> */}
             <br />
-            <input
+            {/* <input
               name="status"
               type="hidden"
               className="order-input m-2 p-2"
               defaultValue={update}
               ref={register({ required: true })}
-              />
+              /> */}
             <br />
             <Button
               className="pr-5 pl-5 m-2"
